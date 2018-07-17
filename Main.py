@@ -11,15 +11,12 @@ class Window(QScrollArea):
         layout = QVBoxLayout(widget)
         layout.setAlignment(Qt.AlignCenter)
         for index in range(100):
-            layout.addWidget(QLabel('Label %02d' % index))
+            layout.addWidget(QLabel('-------------------------------' + 'Label %02d' % index + '-------------------------------'))
         self.setWidget(widget)
         self.setWidgetResizable(True)
-
-
-def main():
-    app = QApplication(sys.argv)
-    wind = Window()
-
+        self.show()
 
 if __name__ == '__main__':
-    main()
+    app = QApplication(sys.argv)
+    wind = Window()
+    sys.exit(app.exec_())
